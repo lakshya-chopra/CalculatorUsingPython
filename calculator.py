@@ -14,10 +14,9 @@ def click(event):
     if text == "=":
         if scval.get().isdigit():
             value = int(scval.get())
-            #used if there is no operator
         else:
             try:
-                value = eval(scval.get()) #but if there is an operator , then try to evaluate it.
+                value = eval(scval.get()) 
                 scval.set(f"= {value}")
             except Exception as e:
                 value = "Error"
@@ -27,7 +26,7 @@ def click(event):
         scval.set('')
         screen.update()
     else:
-        scval.set(scval.get() + text)  #kehe rahe hai ki scval mein jo pehle value thi usme new value concatenate kardo
+        scval.set(scval.get() + text) 
         screen.update()
         
 
@@ -36,7 +35,7 @@ def click(event):
 #GUI Variables    
 scval = StringVar()
 scval.set('')
-screen = Entry(root, textvar=scval, font='lucida 40 bold', bg='#eee')  #screen entry widget will store the value given in variable scval,but we need to specify which value can variable scval store, so we set scval as a StringVar() variable.
+screen = Entry(root, textvar=scval, font='lucida 40 bold', bg='#eee') 
 screen.grid(row=0, column=0)
 screen.pack(fill=X, ipady=7)
 
