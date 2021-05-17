@@ -12,9 +12,7 @@ def click(event):
     global scval
     text = event.widget.cget('text')
     if text == "=":
-        if scval.get().isdigit():
-            value = int(scval.get())
-        else:
+        if scval.get() != "":
             try:
                 value = eval(scval.get()) 
                 scval.set(f"= {value}")
@@ -22,6 +20,8 @@ def click(event):
                 value = "Error"
                 scval.set(f"= {value}")
                 tmsg.showinfo('Message','Click on "C" button to clear the error and perform next operation')
+        else:
+            pass
     elif text == "C":
         scval.set('')
         screen.update()
