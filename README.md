@@ -1,2 +1,2 @@
 # CalculatorUsingPython
-GUI Calculator made by me using Python's Tkinter.
+GUI Calculator made using Python's Tkinter.
